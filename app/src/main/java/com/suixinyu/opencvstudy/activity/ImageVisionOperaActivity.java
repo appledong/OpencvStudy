@@ -103,6 +103,9 @@ public class ImageVisionOperaActivity extends AppCompatActivity implements View.
      * opencv没有提供最大值 最小值函数而是利用dilate和erode来替代
      * dilate：常说的膨胀 erode：常说的腐蚀 源mat/目标mat/矩阵size
      * getStructuringElement：快速获取形状mat：指定形状类型，矩阵大小
+     * 膨胀和腐蚀是相对的，膨胀和腐蚀仅针对与黑白二值图像且仅针对于前景色，膨胀是白色卷积核，
+     * 遇边缘将其转为白色若前景色是黑色则为腐蚀，相反腐蚀是黑色卷积核，前景色为黑色则为膨胀
+     * 前景色为白色则为腐蚀。即腐蚀还是膨胀取决于卷积核和前景色。
      */
     private void pixMaxMinlb() {
         Mat mat = null;
