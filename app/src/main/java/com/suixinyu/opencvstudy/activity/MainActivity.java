@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView = findViewById(R.id.textview);
         textView.setOnClickListener(this);
         findViewById(R.id.textviewvision).setOnClickListener(this);
+        findViewById(R.id.textviewxtx).setOnClickListener(this);
     }
 
     @Override
@@ -81,6 +82,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.textviewvision:
                 intent.setClass(getBaseContext(), ImageVisionOperaActivity.class);
+                break;
+            case R.id.textviewxtx:
+                intent.setClass(getBaseContext(), ImageXtxOperaActivity.class);
                 break;
         }
         startActivity(intent);
